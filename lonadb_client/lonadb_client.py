@@ -3,7 +3,6 @@ import json
 import base64
 import string
 import random
-from Crypto.Cipher import AES
 
 class LonadbClient:
     def __init__(self, host, port, name, password):
@@ -264,6 +263,20 @@ class LonadbClient:
                 "user": name,
                 "name": permission
             },
+            "login": {
+                "name": self.name,
+                "password": self.password
+            },
+            "process": process_id
+        }
+        response = await self.send_receive(data)
+        return response
+
+    async def eval(self, func):
+        process_id = await self.makeid(5)
+        data = {
+            "action": "eval",
+            "function": func,
             "login": {
                 "name": self.name,
                 "password": self.password

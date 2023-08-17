@@ -20,10 +20,10 @@ To use the `lonadb-client` library, follow these steps:
 from lonadb_client import LonadbClient
 ```
 
-2. Create an instance of the `LonadbClient` class:
+2. Create an instance of the `LonaDB-Client` class:
 
 ```python
-client = LonadbClient(host, port, name, password)
+client = LonaClient(host, port, name, password)
 ```
 
 Replace `host`, `port`, `name`, and `password` with the appropriate values for your Lonadb database server.
@@ -97,6 +97,12 @@ Retrieves the raw permission data for a user.
 ### `addPermission(name, permission)`
 
 Adds a permission to a user.
+
+### `eval(function)`
+
+Runs the function. (must be a string) </br>
+Example: "if(lona.config.port === 1234) return 'wtf'" </br>
+Response: {"success": true, "response": "wtf", "process": processID}
 
 ## License
 

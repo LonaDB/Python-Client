@@ -6,7 +6,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name="lonadb-client",
-    version="1.2",
+    version="1.3",
     author="Collin Buchkamer",
     author_email="collin@kisara.app",
     description="A client library for interacting with LonaDB server",
