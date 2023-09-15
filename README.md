@@ -38,7 +38,7 @@ print("Available tables:", tables)
 
 ## Available Methods
 
-### `getTables()`
+### `getTables(username)`
 
 Retrieves a list of tables available in the database.
 

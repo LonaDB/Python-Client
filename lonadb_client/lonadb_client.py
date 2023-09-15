@@ -32,7 +32,7 @@ class LonadbClient:
             return json.loads(data_raw)
 
 
-    async def getTables(self):
+    async def getTables(self, user):
         process_id = await self.makeid(5)
         data = {
             "action": "get_tables",
@@ -40,6 +40,7 @@ class LonadbClient:
                 "name": self.name,
                 "password": self.password
             },
+            "user": user,
             "process": process_id
         }
 
